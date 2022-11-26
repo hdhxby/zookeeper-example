@@ -12,17 +12,16 @@
     <modules>
         <module>zookeeper-example-gateway</module>
         <module>zookeeper-example-hello</module>
+        <module>zookeeper-example-test</module>
         <module>zookeeper-example-world</module>
     </modules>
     <properties>
         <!-- Build properties -->
-        <!--        <maven.version>3.3.9</maven.version>-->
+<!--        <maven.version>3.3.9</maven.version>-->
         <java.version>11</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <!-- Dependency versions -->
-<!--        <spring-boot.version>2.5.14</spring-boot.version>-->
-<!--        <spring-cloud.version>2020.0.6</spring-cloud.version>-->
         <spring-boot.version>2.7.5</spring-boot.version>
         <spring-cloud.version>2021.0.5</spring-cloud.version>
         <springfox.version>3.0.0</springfox.version>
@@ -53,29 +52,6 @@
         </dependencies>
     </dependencyManagement>
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <annotationProcessorPaths>
-                        <path>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                            <version>${lombok.version}</version>
-                        </path>
-                    </annotationProcessorPaths>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>com.google.cloud.tools</groupId>
-                <artifactId>jib-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -96,31 +72,31 @@
                         <to>
                             <image>${project.artifactId}:latest</image>
                         </to>
-                        <!--                    <container>-->
-                        <!--                        <entrypoint>-->
-                        <!--                            <shell>bash</shell>-->
-                        <!--                            <option>-c</option>-->
-                        <!--                            <arg>/entrypoint.sh</arg>-->
-                        <!--                        </entrypoint>-->
-                        <!--                        <ports>-->
-                        <!--                            <port>8080</port>-->
-                        <!--                        </ports>-->
-                        <!--                        <environment>-->
-                        <!--                            <SPRING_OUTPUT_ANSI_ENABLED>ALWAYS</SPRING_OUTPUT_ANSI_ENABLED>-->
-                        <!--                            <JHIPSTER_SLEEP>0</JHIPSTER_SLEEP>-->
-                        <!--                        </environment>-->
-                        <!--                        <creationTime>USE_CURRENT_TIMESTAMP</creationTime>-->
-                        <!--                        <user>1000</user>-->
-                        <!--                    </container>-->
-                        <!--                    <extraDirectories>-->
-                        <!--                        <paths>src/main/docker/jib</paths>-->
-                        <!--                        <permissions>-->
-                        <!--                            <permission>-->
-                        <!--                                <file>/entrypoint.sh</file>-->
-                        <!--                                <mode>755</mode>-->
-                        <!--                            </permission>-->
-                        <!--                        </permissions>-->
-                        <!--                    </extraDirectories>-->
+<!--                    <container>-->
+<!--                        <entrypoint>-->
+<!--                            <shell>bash</shell>-->
+<!--                            <option>-c</option>-->
+<!--                            <arg>/entrypoint.sh</arg>-->
+<!--                        </entrypoint>-->
+<!--                        <ports>-->
+<!--                            <port>8080</port>-->
+<!--                        </ports>-->
+<!--                        <environment>-->
+<!--                            <SPRING_OUTPUT_ANSI_ENABLED>ALWAYS</SPRING_OUTPUT_ANSI_ENABLED>-->
+<!--                            <JHIPSTER_SLEEP>0</JHIPSTER_SLEEP>-->
+<!--                        </environment>-->
+<!--                        <creationTime>USE_CURRENT_TIMESTAMP</creationTime>-->
+<!--                        <user>1000</user>-->
+<!--                    </container>-->
+<!--                    <extraDirectories>-->
+<!--                        <paths>src/main/docker/jib</paths>-->
+<!--                        <permissions>-->
+<!--                            <permission>-->
+<!--                                <file>/entrypoint.sh</file>-->
+<!--                                <mode>755</mode>-->
+<!--                            </permission>-->
+<!--                        </permissions>-->
+<!--                    </extraDirectories>-->
                     </configuration>
                 </plugin>
             </plugins>
