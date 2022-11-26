@@ -1,0 +1,19 @@
+server:
+    port: 8080
+
+spring:
+    application:
+        name: gateway
+    cloud:
+      zookeeper:
+        connect-string: localhost:2181
+      gateway:
+          routes:
+          - id: hello
+            uri: lb://hello
+            predicates:
+              - Path=/api/hello/**
+          - id: world
+            uri: lb://world
+            predicates:
+            - Path=/api/world/**
